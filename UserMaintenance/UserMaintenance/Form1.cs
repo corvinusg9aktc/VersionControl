@@ -59,15 +59,7 @@ namespace UserMaintenance
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var kivalasztott = (User)listBox1.SelectedItem;
-
-
-
-            var törlendö = (from x in users where x.ID == kivalasztott.ID select x).FirstOrDefault();
-
-
-
-            users.Remove(törlendö);
+           
         }
     }
 }
