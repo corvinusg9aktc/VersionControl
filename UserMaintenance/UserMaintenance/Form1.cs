@@ -20,7 +20,8 @@ namespace UserMaintenance
             InitializeComponent();
             label1.Text = Resource1.FullName;
             button1.Text = Resource1.Add;
-            button2.Text = Resource1.Add;
+            button2.Text = Resource1.Write;
+            button3.Text = Resource1.delete;
 
 
             listBox1.DataSource = users;
@@ -54,6 +55,19 @@ namespace UserMaintenance
                     sw.WriteLine();
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var kivalasztott = (User)listBox1.SelectedItem;
+
+
+
+            var törlendö = (from x in users where x.ID == kivalasztott.ID select x).FirstOrDefault();
+
+
+
+            users.Remove(törlendö);
         }
     }
 }
