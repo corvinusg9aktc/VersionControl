@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace WindowsFormsApp1
 {
@@ -25,5 +27,6 @@ namespace WindowsFormsApp1
         {
             Flats = context.Flats.ToList();
         }
+
     }
 }
