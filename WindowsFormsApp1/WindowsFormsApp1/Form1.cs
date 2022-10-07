@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < headers.Length; i++)
             {
-                xlSheet.Cells[1, 1] = headers[0];
+                xlSheet.Cells[1, i+1] = headers[i];
             }
 
 
