@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = Rates;
         }
 
-        private string ServiceCall()
+       /* private string ServiceCall()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
             var request = new GetExchangeRatesRequestBody()
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
 
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
-        }
+        }*/
 
         private void ProcessXML()
         {
