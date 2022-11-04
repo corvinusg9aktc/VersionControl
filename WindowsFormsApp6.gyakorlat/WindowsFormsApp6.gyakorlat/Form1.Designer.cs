@@ -33,10 +33,17 @@ namespace WindowsFormsApp6.gyakorlat
             this.mainPanel = new System.Windows.Forms.Panel();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSelectCar = new System.Windows.Forms.Button();
+            this.btnSelectBall = new System.Windows.Forms.Button();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.btnSelectBall);
+            this.mainPanel.Controls.Add(this.btnSelectCar);
+            this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Location = new System.Drawing.Point(2, 2);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(798, 445);
@@ -52,6 +59,35 @@ namespace WindowsFormsApp6.gyakorlat
             this.conveyorTimer.Interval = 10;
             this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(98, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // btnSelectCar
+            // 
+            this.btnSelectCar.Location = new System.Drawing.Point(253, 256);
+            this.btnSelectCar.Name = "btnSelectCar";
+            this.btnSelectCar.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectCar.TabIndex = 1;
+            this.btnSelectCar.Text = "CAR";
+            this.btnSelectCar.UseVisualStyleBackColor = true;
+            this.btnSelectCar.Click += new System.EventHandler(this.btnSelectCar_Click);
+            // 
+            // btnSelectBall
+            // 
+            this.btnSelectBall.Location = new System.Drawing.Point(431, 246);
+            this.btnSelectBall.Name = "btnSelectBall";
+            this.btnSelectBall.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectBall.TabIndex = 2;
+            this.btnSelectBall.Text = "BALL";
+            this.btnSelectBall.UseVisualStyleBackColor = true;
+            this.btnSelectBall.Click += new System.EventHandler(this.btnSelectBall_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -60,6 +96,8 @@ namespace WindowsFormsApp6.gyakorlat
             this.Controls.Add(this.mainPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +107,9 @@ namespace WindowsFormsApp6.gyakorlat
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Timer createTimer;
         private System.Windows.Forms.Timer conveyorTimer;
+        private System.Windows.Forms.Button btnSelectBall;
+        private System.Windows.Forms.Button btnSelectCar;
+        private System.Windows.Forms.Label label1;
     }
 }
 
