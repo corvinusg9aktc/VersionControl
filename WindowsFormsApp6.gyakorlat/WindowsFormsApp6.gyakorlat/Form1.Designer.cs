@@ -37,11 +37,17 @@ namespace WindowsFormsApp6.gyakorlat
             this.btnSelectCar = new System.Windows.Forms.Button();
             this.btnSelectBall = new System.Windows.Forms.Button();
             this.btnColor = new System.Windows.Forms.Button();
+            this.btn_Present = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnColor2 = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.btnColor2);
+            this.mainPanel.Controls.Add(this.button1);
+            this.mainPanel.Controls.Add(this.btn_Present);
             this.mainPanel.Controls.Add(this.btnColor);
             this.mainPanel.Controls.Add(this.btnSelectBall);
             this.mainPanel.Controls.Add(this.btnSelectCar);
@@ -64,17 +70,17 @@ namespace WindowsFormsApp6.gyakorlat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 277);
+            this.label1.Location = new System.Drawing.Point(325, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Coming Next:";
             // 
             // btnSelectCar
             // 
-            this.btnSelectCar.Location = new System.Drawing.Point(253, 256);
+            this.btnSelectCar.Location = new System.Drawing.Point(10, 10);
             this.btnSelectCar.Name = "btnSelectCar";
-            this.btnSelectCar.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectCar.Size = new System.Drawing.Size(75, 52);
             this.btnSelectCar.TabIndex = 1;
             this.btnSelectCar.Text = "CAR";
             this.btnSelectCar.UseVisualStyleBackColor = true;
@@ -82,9 +88,9 @@ namespace WindowsFormsApp6.gyakorlat
             // 
             // btnSelectBall
             // 
-            this.btnSelectBall.Location = new System.Drawing.Point(431, 246);
+            this.btnSelectBall.Location = new System.Drawing.Point(113, 10);
             this.btnSelectBall.Name = "btnSelectBall";
-            this.btnSelectBall.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectBall.Size = new System.Drawing.Size(75, 52);
             this.btnSelectBall.TabIndex = 2;
             this.btnSelectBall.Text = "BALL";
             this.btnSelectBall.UseVisualStyleBackColor = true;
@@ -93,12 +99,39 @@ namespace WindowsFormsApp6.gyakorlat
             // btnColor
             // 
             this.btnColor.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnColor.Location = new System.Drawing.Point(596, 255);
+            this.btnColor.Location = new System.Drawing.Point(113, 68);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(75, 23);
             this.btnColor.TabIndex = 3;
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btn_Present
+            // 
+            this.btn_Present.Location = new System.Drawing.Point(222, 10);
+            this.btn_Present.Name = "btn_Present";
+            this.btn_Present.Size = new System.Drawing.Size(75, 52);
+            this.btn_Present.TabIndex = 4;
+            this.btn_Present.Text = "Present";
+            this.btn_Present.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(222, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnColor2
+            // 
+            this.btnColor2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnColor2.Location = new System.Drawing.Point(222, 97);
+            this.btnColor2.Name = "btnColor2";
+            this.btnColor2.Size = new System.Drawing.Size(75, 23);
+            this.btnColor2.TabIndex = 6;
+            this.btnColor2.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -123,6 +156,9 @@ namespace WindowsFormsApp6.gyakorlat
         private System.Windows.Forms.Button btnSelectCar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Button btnColor2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Present;
     }
 }
 
