@@ -26,7 +26,7 @@ namespace _7gyakorlat
 
             CreatePortfolio();
 
-            GetPortfolioValue(DateTime date);
+            
 
             List<decimal> Nyereségek = new List<decimal>();
             int intervalum = 30;
