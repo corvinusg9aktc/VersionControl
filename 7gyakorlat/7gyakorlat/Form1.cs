@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace _7gyakorlat
 {
@@ -16,6 +19,10 @@ namespace _7gyakorlat
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+
+        Excel.Application xlApp;
+        Excel.Workbook xlWb;
+        Excel.Worksheet xlSheet;
 
         public Form1()
         {
@@ -26,7 +33,7 @@ namespace _7gyakorlat
 
             CreatePortfolio();
 
-            
+
 
             List<decimal> Nyereségek = new List<decimal>();
             int intervalum = 30;
@@ -73,7 +80,56 @@ namespace _7gyakorlat
             dataGridView2.DataSource = Portfolio;
         }
 
-        
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xlApp = new Excel.Application();
+                xlWb = xlApp.Workbooks.Add(Missing.Value);
+                xlSheet = xlWb.ActiveSheet;
+
+                CreateExcel();
+
+                xlApp.Visible = true;
+                xlApp.UserControl = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                xlWb.Close(false, Type.Missing, Type.Missing);
+                xlApp.Quit();
+                xlWb = null;
+                xlSheet = null;
+            }
+        }
+
+        private void CreateExcel()
+        {
+            string[] headers = new string[]
+            {
+                "Időszak",
+                "Nyereség",
+            };
+            for (int i = 0; i < headers.Length; i++)
+            {
+                xlSheet.Cells[1, i + 1] = headers[i];
+            }
+
+
+            object[,] values = new object[Ticks.Count, headers.Length];
+
+
+            int counter = 0;
+
+            foreach (Tick f in Ticks)
+            {
+                values[counter, 0] = f.TradingDay;
+                values[counter, 1] = f.Price;
+                counter++;
+
+            }
+            
+        }
     }
 }
