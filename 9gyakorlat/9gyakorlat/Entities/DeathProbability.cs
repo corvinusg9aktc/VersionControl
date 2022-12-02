@@ -10,6 +10,6 @@ namespace _9gyakorlat.Entities
     {
         public Gender Gender { get; set; }
         public int Age { get; set; }
-        public double DeathP { get; set; }
+        public double P { get; set; }
     }
 }

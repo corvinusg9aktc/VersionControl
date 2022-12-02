@@ -10,6 +10,6 @@ namespace _9gyakorlat.Entities
     {
         public int Age { get; set; }
         public int NbrOfChildren { get; set; }
-        public double BirthP { get; set; }
+        public double P { get; set; }
     }
 }
