@@ -21,6 +21,11 @@ namespace _9gyakorlat
         public Form1()
         {
             InitializeComponent();
+            Population = GetPopulation(@"C:\Temp\nép.csv");
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+
+            dataGridView1.DataSource = Population.ToList();
         }
 
         public List<Person> GetPopulation(string csvpath)
@@ -42,6 +47,48 @@ namespace _9gyakorlat
             }
 
             return population;
+        }
+
+        public List<BirthProbability> GetBirthProbabilities(string csvpath)
+        {
+            List<BirthProbability> birthProbabilities = new List<BirthProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    birthProbabilities.Add(new BirthProbability()
+                    {
+                        Age = int.Parse(line[0]),
+                        NbrOfChildren = int.Parse(line[1]),
+                        BirthP = double.Parse(line[2])
+                    });
+                }
+            }
+
+            return birthProbabilities;
+        }
+
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
+        {
+            List<DeathProbability> deathProbabilities = new List<DeathProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    deathProbabilities.Add(new DeathProbability()
+                    {
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
+                        Age = int.Parse(line[1]),
+                        DeathP = double.Parse(line[2])
+                    });
+                }
+            }
+
+            return deathProbabilities;
         }
     }
 }
