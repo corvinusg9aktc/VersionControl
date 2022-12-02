@@ -27,7 +27,7 @@ namespace _9gyakorlat
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
-            dataGridView1.DataSource = Population.ToList();
+            
 
             
             
